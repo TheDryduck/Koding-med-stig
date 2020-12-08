@@ -1,37 +1,31 @@
+//Horizontal
 #include <LiquidCrystal.h>
 const int rs = 4, en = 5,d0 = 6, d1=7,d2=8,d3=9, d4 = 10, d5 = 11, d6 = 12, d7 = 13;
 LiquidCrystal lcd(rs, en, d0, d1, d2, d3, d4, d5, d6, d7);
 void moveOneRow(int x);
-
-
 void setup()
 {
    // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
   // Print a message to the LCD.
-  pinMode(1, INPUT);
-  pinMode(0, OUTPUT);
+  pinMode(3, INPUT);
+  pinMode(2, OUTPUT);
   
-
-
 }
-
 void loop()
 {
-
-  if(digitalRead(1)==HIGH){
-    digitalWrite(0, HIGH);
+  if(digitalRead(3)==HIGH){
+    digitalWrite(2, HIGH);
     for(int i=1; i <= 3; i++){
     	for(int j=0; j <= 9; j++){
     	moveOneRow(j);
     	}
     }
   }
-  else{
-  	digitalWrite(0, LOW);  
-    }
+else{
+     digitalWrite(2, LOW);  
+ }
 }
-
 void moveOneRow(int x){
 	lcd.clear();
 	lcd.setCursor(x, 0);
