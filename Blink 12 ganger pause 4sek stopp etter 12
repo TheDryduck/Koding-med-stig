@@ -1,0 +1,31 @@
+//TEst
+int RED = 0;
+int YELLOW =1;
+void blink();
+void setup () {
+pinMode(0, OUTPUT);
+pinMode(1, OUTPUT);
+pinMode(2, INPUT);
+}
+
+void loop() {
+
+while(true){
+if(digitalRead(2)==HIGH){
+   break;
+      }
+blink(1000, 12); //Funksjonen under
+delay(4000);
+
+   }
+digitalWrite(1, HIGH); //For testing
+}
+
+void blink(int tid, int repeats){
+for(int i = 0; i < repeats; i++){
+   digitalWrite(RED, HIGH);
+   delay(tid);
+   digitalWrite(RED, LOW);
+   delay(tid);
+   }
+}
