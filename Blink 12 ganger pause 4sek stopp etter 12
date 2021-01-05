@@ -1,4 +1,4 @@
-//TEst
+//Oppgave 3
 int RED = 0;
 int YELLOW =1;
 void blink();
